@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  rift-rivals-database:
+    image: postgres:16.1-alpine
+    container_name: rift-rivals-database
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: 'riftdb'
+      POSTGRES_USER: 'riftuser'
+      POSTGRES_PASSWORD: 'riftpassword'
+    networks:
+      - rift-rivals-network
+    tty: true
+
+  rift-rivals-server:
+    image: node:21.1.0-alpine
+    container_name: rift-rivals-server
+    ports:
+      - '3000:3000'
+    entrypoint: npm run start
+    networks:
+      - rift-rivals-network
+    volumes:
+      - ./rift-rivals:/root/rift-rivals
+    working_dir: /root/rift-rivals
+    depends_on:
+      - rift-rivals-database
+
+networks:
+  rift-rivals-network:
+    driver: bridge
