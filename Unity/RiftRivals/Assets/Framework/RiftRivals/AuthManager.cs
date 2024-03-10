@@ -52,7 +52,8 @@ namespace Framework.RiftRivals
         {
             string data = JsonUtility.ToJson(loginInfo);
             StartCoroutine(_restUtility.Post("login", data, data => {
-                
+                LoginResponse loginResponse = JsonUtility.FromJson<LoginResponse>(data);
+                token = loginResponse.accessToken;
                 onSuccess();
             }, exception => {
                 onError(exception.message);
@@ -62,9 +63,7 @@ namespace Framework.RiftRivals
         public void Register(RegisterInfo registerInfo, Action onSuccess, Action<string> onError)
         {
             string data = JsonUtility.ToJson(registerInfo);
-            StartCoroutine(_restUtility.Post("login", data, data => {
-                LoginResponse loginResponse = JsonUtility.FromJson<LoginResponse>(data);
-                token = loginResponse.accessToken;
+            StartCoroutine(_restUtility.Post("login", data, data => { 
                 onSuccess();
             }, exception => {
                 onError(exception.message);
