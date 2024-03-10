@@ -5,48 +5,48 @@ import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { createHash } from 'crypto';
+import { Profile } from 'src/profile/entities/profile.entity';
 
 @Injectable()
 export class UserService {
-  constructor(
-    @InjectRepository(User) private readonly userRepository: Repository<User>,
-  ) {}
+    constructor(
+        @InjectRepository(Profile) private readonly profileRepository: Repository<Profile>,
+        @InjectRepository(User) private readonly userRepository: Repository<User>,
+    ) { }
 
-  create(createUserDto: CreateUserDto): Promise<User> {
-    const user: User = new User();
+    async create(createUserDto: CreateUserDto): Promise<User> {
+        const user: User = new User();
 
-    var hash = createHash('sha512');
-    const password_data = hash.update(createUserDto.password, 'utf-8');
+        var hash = createHash('sha512');
+        const password_data = hash.update(createUserDto.password, 'utf-8');
 
-    user.username = createUserDto.username;
-    user.email = createUserDto.email;
-    user.password = password_data.digest('hex');
+        user.username = createUserDto.username;
+        user.email = createUserDto.email;
+        user.password = password_data.digest('hex');
 
-    return this.userRepository.save(user);
-  }
+        user.profile = new Profile();
+        user.profile.displayName = user.username;
 
-  findAll(): Promise<User[]> {
-    return this.userRepository.find();
-  }
+        return this.userRepository.save(user);
+    }
 
-  findOne(id: number): Promise<User> {
-    return this.userRepository.findOneBy({ id });
-  }
+    findOne(username: string, options?: any): Promise<User> {
+        return this.userRepository.findOne({
+            relations: ['profile'],
+            where: { username: username }
+        });
+    }
 
-  findOneByUsername(username: string): Promise<User> {
-    return this.userRepository.findOneBy({ username });
-  }
+    updateUser(id: number, updateUserDto: UpdateUserDto): Promise<User> {
+        const user: User = new User();
+        user.username = updateUserDto.username;
+        user.email = updateUserDto.email;
+        user.password = updateUserDto.password;
+        user.id = id;
+        return this.userRepository.save(user);
+    }
 
-  updateUser(id: number, updateUserDto: UpdateUserDto): Promise<User> {
-    const user: User = new User();
-    user.username = updateUserDto.username;
-    user.email = updateUserDto.email;
-    user.password = updateUserDto.password;
-    user.id = id;
-    return this.userRepository.save(user);
-  }
-
-  remove(id: number): Promise<{ affected?: number }> {
-    return this.userRepository.delete(id);
-  }
+    remove(id: number): Promise<{ affected?: number }> {
+        return this.userRepository.delete(id);
+    }
 }

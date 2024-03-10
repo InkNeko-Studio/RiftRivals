@@ -20,22 +20,18 @@ export class AuthService {
     }
 
     async register(createUserDto: CreateUserDto) {
-        return await this.userService.create(createUserDto);
-    }
-
-    async getProfile(username: string): Promise<{}> {
-        const user = await this.userService.findOneByUsername(username);
-        return {
-            "id": user.id,
-            "username": user.username
-        };
+        const user = await this.userService.create(createUserDto);
+        if (user)
+            return true;
+        else
+            return false;
     }
 
     async validateUser(
         username: string,
         password: string,
     ): Promise<any> {
-        const user = await this.userService.findOneByUsername(username);
+        const user = await this.userService.findOne(username);
         if (!user) return null;
         
         var hash = createHash('sha512');

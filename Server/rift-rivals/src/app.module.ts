@@ -3,6 +3,8 @@ import { AuthModule } from './auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user/entities/user.entity';
 import { UserModule } from './user/user.module';
+import { ProfileModule } from './profile/profile.module';
+import { Profile } from './profile/entities/profile.entity';
 
 @Module({
   imports: [
@@ -12,13 +14,14 @@ import { UserModule } from './user/user.module';
       port: 5432,
       password: 'riftpassword',
       username: 'riftuser',
-      entities: [User],
+      entities: [User, Profile],
       database: 'riftdb',
       synchronize: true,
       logging: true,
     }),
-    UserModule,
     AuthModule,
+    UserModule,
+    ProfileModule,
   ],
 })
 export class AppModule {}

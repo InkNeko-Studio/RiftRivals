@@ -18,10 +18,4 @@ export class AuthController {
     register(@Body() createUserDto: CreateUserDto) {
         return this.authService.register(createUserDto);
     }
-
-    @UseGuards(AuthGuard('jwt'))
-    @Get('profile')
-    getProfile(@Request() req) {
-      return this.authService.getProfile(req.user.username);
-    }
 }
