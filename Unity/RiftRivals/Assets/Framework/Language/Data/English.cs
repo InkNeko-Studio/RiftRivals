@@ -16,6 +16,8 @@ namespace Framework.Language.Data
             {"pvpbutton", "PvP"},
             {"rankedbutton", "Ranked"},
             {"battlebackbutton", "Back"},
+            {"userbutton", "User"},
+            {"configbutton", "Config"},
         };
 
         public string GetString(string code)
