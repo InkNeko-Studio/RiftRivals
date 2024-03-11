@@ -9,6 +9,13 @@ namespace Framework.Language.Data
             { "login", "Entrar" },
             { "username", "Nome de Usuário" },
             { "password", "Senha" },
+            {"playmode", "Batalha"},
+            {"teambutton", "Equipe"},
+            {"pvebutton", "PvE"},
+            {"expeditionbutton", "Expedição"},
+            {"pvpbutton", "PvP"},
+            {"rankedbutton", "Ranqueada"},
+            {"battlebackbutton", "Voltar"},
         };
 
         public string GetString(string code)
