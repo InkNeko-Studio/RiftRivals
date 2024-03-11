@@ -7,7 +7,7 @@ namespace Game.Scenes.MainMenu.Scripts
     public class Play : MonoBehaviour
     {
         public GameObject battlePanel;
-
+        
         public void OpenBattle()
         {
             battlePanel.SetActive(true);
