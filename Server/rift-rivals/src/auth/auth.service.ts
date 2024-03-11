@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { BadRequestException, HttpException, Injectable } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import { createHash } from "crypto";
 import { CreateUserDto } from "src/user/dto/create-user.dto";
@@ -20,11 +20,23 @@ export class AuthService {
     }
 
     async register(createUserDto: CreateUserDto) {
-        const user = await this.userService.create(createUserDto);
-        if (user)
-            return true;
-        else
-            return false;
+        try {
+            const user = await this.userService.create(createUserDto);
+            if (user)
+                return true;
+            else
+                return false;
+        } catch(err) {
+            const isUsernameInUse = await this.userService.usernameAlreadyInUse(createUserDto.username);
+            if (isUsernameInUse) 
+                throw new BadRequestException("usernamealreadyinuse");
+
+            const isEmailInUse = await this.userService.usernameAlreadyInUse(createUserDto.username);
+            if (isEmailInUse) 
+                throw new BadRequestException("emailalreadyinuse");
+
+            throw new BadRequestException("registerfailed");
+        }
     }
 
     async validateUser(

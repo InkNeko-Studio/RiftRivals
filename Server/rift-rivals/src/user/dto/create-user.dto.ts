@@ -7,18 +7,16 @@ import {
 } from 'class-validator';
 
 export class CreateUserDto {
-  @IsNotEmpty()
-  @MinLength(3, { message: 'Username must have atleast 3 characters.' })
-  @IsAlphanumeric('en-US', {
-    message: 'Username does not allow other than alpha numeric chars.',
-  })
+  @MinLength(3, { message: 'usernameshort' })
+  @IsAlphanumeric('en-US', { message: 'usernamealphanum', })
+  @IsNotEmpty({ message: 'usernameempty' })
   username: string;
 
-  @IsNotEmpty()
-  @IsEmail({}, { message: 'Please provide valid Email.' })
+  @IsEmail({}, { message: 'emailinvalid' })
+  @IsNotEmpty({ message: 'emailempty' })
   email: string;
 
-  @IsNotEmpty()
-  @MinLength(8, { message: 'Password must have atleast 8 characters.' })
+  @MinLength(8, { message: 'passwordshort' })
+  @IsNotEmpty({ message: 'passwordempty' })
   password: string;
 }

@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
+using Framework.RiftRivals;
+using Game.Shared.UI.Popup;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
-public class LoginPanel : MonoBehaviour
+namespace Game.Scenes.Start.Scripts
 {
-    // Start is called before the first frame update
-    void Start()
+    public class LoginPanel : MonoBehaviour
     {
-        
-    }
+        public TMP_InputField inputUsername;
+        public TMP_InputField inputPassword;
 
-    // Update is called once per frame
-    void Update()
-    {
+        public Popup errorPopup;
         
+        public void LoginButton()
+        {
+            LoginInfo loginInfo = new LoginInfo()
+            {
+                username = inputUsername.text,
+                password = inputPassword.text
+            };
+            AuthManager.Instance.Login(loginInfo, () => {
+                SceneManager.LoadScene("MainMenu");
+            }, err => {
+                errorPopup.Show(2);
+            });
+        }
     }
 }

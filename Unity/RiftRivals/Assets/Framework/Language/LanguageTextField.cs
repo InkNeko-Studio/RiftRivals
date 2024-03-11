@@ -7,9 +7,9 @@ namespace Framework.Language
     {
         public string code;
     
-        private TMP_Text _text;
+        public TMP_Text _text;
 
-        public void Start()
+        public void OnEnable()
         {
             _text = GetComponent<TMP_Text>();
             
@@ -17,6 +17,12 @@ namespace Framework.Language
                 _text.text = LanguageManager.Instance.Get(code);
             };
             
+            _text.text = LanguageManager.Instance.Get(code);
+        }
+
+        public void SetText(string newCode)
+        {
+            code = newCode;
             _text.text = LanguageManager.Instance.Get(code);
         }
     }

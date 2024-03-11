@@ -37,37 +37,27 @@ namespace Framework.RiftRivals
             
             DontDestroyOnLoad(gameObject);
         }
-        
-        public string url;
-        public string token;
-
-        private RestUtility _restUtility;
-
-        public void Start()
-        {
-            _restUtility = new RestUtility(url, null);
-        }
 
         public void Login(LoginInfo loginInfo, Action onSuccess, Action<string> onError)
         {
             string data = JsonUtility.ToJson(loginInfo);
-            StartCoroutine(_restUtility.Post("login", data, data => {
-                LoginResponse loginResponse = JsonUtility.FromJson<LoginResponse>(data);
-                token = loginResponse.accessToken;
+            ConnectionManager.Instance.Post(Routes.AuthLogin, data, res => {
+                LoginResponse loginResponse = JsonUtility.FromJson<LoginResponse>(res);
+                ConnectionManager.Instance.token = loginResponse.accessToken;
                 onSuccess();
             }, exception => {
                 onError(exception.message);
-            }));
+            });
         }
         
         public void Register(RegisterInfo registerInfo, Action onSuccess, Action<string> onError)
         {
             string data = JsonUtility.ToJson(registerInfo);
-            StartCoroutine(_restUtility.Post("login", data, data => { 
+            ConnectionManager.Instance.Post(Routes.AuthRegister, data, res => { 
                 onSuccess();
             }, exception => {
                 onError(exception.message);
-            }));
+            });
         }
     }
 }

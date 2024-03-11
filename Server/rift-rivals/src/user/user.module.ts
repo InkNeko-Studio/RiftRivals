@@ -6,7 +6,7 @@ import { Profile } from 'src/profile/entities/profile.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([User, Profile]),
+    TypeOrmModule.forFeature([User]),
   ],
   providers: [UserService],
   exports: [UserService],

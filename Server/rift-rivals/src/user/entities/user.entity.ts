@@ -1,4 +1,5 @@
 import { Profile } from "src/profile/entities/profile.entity";
+import { Wallet } from "src/wallet/entities/wallet.entity";
 import { Column, Entity, Index, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
@@ -18,4 +19,8 @@ export class User {
     @OneToOne(() => Profile, { cascade: true })
     @JoinColumn()
     profile: Profile;
+
+    @OneToOne(() => Wallet, { cascade: true })
+    @JoinColumn()
+    wallet: Wallet;
 }

@@ -6,11 +6,11 @@ import { User } from './entities/user.entity';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { createHash } from 'crypto';
 import { Profile } from 'src/profile/entities/profile.entity';
+import { Wallet } from 'src/wallet/entities/wallet.entity';
 
 @Injectable()
 export class UserService {
     constructor(
-        @InjectRepository(Profile) private readonly profileRepository: Repository<Profile>,
         @InjectRepository(User) private readonly userRepository: Repository<User>,
     ) { }
 
@@ -27,14 +27,29 @@ export class UserService {
         user.profile = new Profile();
         user.profile.displayName = user.username;
 
+        user.wallet = new Wallet();
+        user.wallet.fans = 0;
+        user.wallet.coins = 0;
+        user.wallet.diamonds = 0;
+
         return this.userRepository.save(user);
     }
 
-    findOne(username: string, options?: any): Promise<User> {
+    findOne(username: string): Promise<User> {
         return this.userRepository.findOne({
-            relations: ['profile'],
+            relations: ['profile', 'wallet'],
             where: { username: username }
         });
+    }
+
+    async usernameAlreadyInUse(username: string): Promise<boolean> {
+        const user = await this.userRepository.findOneBy({username: username});
+        return (user != null);
+    }
+
+    async emailAlreadyInUse(email: string): Promise<boolean> {
+        const user = await this.userRepository.findOneBy({email: email});
+        return (user != null);
     }
 
     updateUser(id: number, updateUserDto: UpdateUserDto): Promise<User> {
