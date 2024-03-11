@@ -7,7 +7,7 @@ namespace Game.Scenes.Load.Scripts
     {
         private void Start()
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("Start");
         }
     }
 }

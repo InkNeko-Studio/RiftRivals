@@ -29,13 +29,6 @@ namespace Framework.Language.Data
             { "pvpbutton", "PvP" },
             { "rankedbutton", "Ranqueada" },
             { "battlebackbutton", "Voltar" },
-            { "playmode", "Batalha" },
-            { "teambutton", "Equipe" },
-            { "pvebutton", "PvE" },
-            { "expeditionbutton", "Expedição" },
-            { "pvpbutton", "PvP" },
-            { "rankedbutton", "Ranqueada" },
-            { "battlebackbutton", "Voltar" },
             { "userbutton", "Usuario" },
             { "configbutton", "Confi" },
         };
