@@ -19,13 +19,7 @@ namespace Game.Shared.UI.Popup
         public void Show(int seconds)
         {
             Show();
-            StartCoroutine(HideAfter(seconds));
-        }
-
-        private IEnumerator HideAfter(int seconds)
-        {
-            yield return new WaitForSeconds(seconds);
-            Hide();
+            Invoke(nameof(Hide), seconds);
         }
     }
 }
