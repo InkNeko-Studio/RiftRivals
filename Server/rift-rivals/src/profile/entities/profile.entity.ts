@@ -5,6 +5,6 @@ export class Profile {
     @PrimaryGeneratedColumn()
     id: number;
   
-    @Column({ type: 'varchar', length: 32 })
+    @Column({ type: 'varchar', length: 12 })
     displayName: string;
 }

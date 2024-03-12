@@ -7,6 +7,7 @@ import { ProfileModule } from './profile/profile.module';
 import { Profile } from './profile/entities/profile.entity';
 import { Wallet } from './wallet/entities/wallet.entity';
 import { WalletModule } from './wallet/wallet.module';
+import { Friends } from './profile/entities/friends.entity';
 
 @Module({
   imports: [
@@ -16,7 +17,7 @@ import { WalletModule } from './wallet/wallet.module';
       port: 5432,
       password: 'riftpassword',
       username: 'riftuser',
-      entities: [User, Profile, Wallet],
+      entities: [User, Profile, Friends, Wallet],
       database: 'riftdb',
       synchronize: true,
       logging: true,

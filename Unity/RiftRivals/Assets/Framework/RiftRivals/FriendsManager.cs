@@ -1,18 +1,12 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Framework.RiftRivals
 {
-    [Serializable]
-    public class Profile
+    public class FriendsManager : MonoBehaviour
     {
-        public int id;
-        public string displayName;
-    }
-
-    public class ProfileManager : MonoBehaviour
-    {
-        public static ProfileManager Instance;
+        public static FriendsManager Instance;
         
         public void Awake()
         {
@@ -22,6 +16,11 @@ namespace Framework.RiftRivals
                 Destroy(gameObject);
             
             DontDestroyOnLoad(gameObject);
+        }
+
+        public void GetFriends(List<Profile> friends)
+        {
+            ConnectionManager.Get()
         }
     }
 }
