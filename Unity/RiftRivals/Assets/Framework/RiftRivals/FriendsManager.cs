@@ -20,7 +20,11 @@ namespace Framework.RiftRivals
 
         public void GetFriends(List<Profile> friends)
         {
-            ConnectionManager.Get()
+            ConnectionManager.Instance.Get(Routes.Friends, data => {
+                friends = JsonUtility.FromJson<List<Profile>>(data);
+            }, err => {
+                Debug.Log("failed getting friends");
+            });
         }
     }
 }
