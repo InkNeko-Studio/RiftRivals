@@ -1058,6 +1058,7 @@ GameObject:
   - component: {fileID: 220763383}
   - component: {fileID: 220763385}
   - component: {fileID: 220763384}
+  - component: {fileID: 220763386}
   m_Layer: 5
   m_Name: '[Panel] Wallet'
   m_TagString: Untagged
@@ -1125,6 +1126,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220763382}
   m_CullTransparentMesh: 1
+--- !u!114 &220763386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220763382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a2f35ff3eba0c4c8631e5d8ce7985b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textFans: {fileID: 1150588239}
+  textCoins: {fileID: 617156632}
+  textDiamonds: {fileID: 815910468}
 --- !u!1 &255004028
 GameObject:
   m_ObjectHideFlags: 0

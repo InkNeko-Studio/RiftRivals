@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Game.Scenes.Load.Scripts
+namespace Game.Scenes.LoadBaseSystems.Scripts
 {
     public class AutoLoad : MonoBehaviour
     {

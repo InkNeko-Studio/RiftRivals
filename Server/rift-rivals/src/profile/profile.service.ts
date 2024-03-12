@@ -17,7 +17,6 @@ export class ProfileService {
         const user = await this.userService.findOne(username);
         if (!user)
             throw new NotFoundException();
-        console.log("user_profile", user.profile);
         return user.profile;
     }
 
