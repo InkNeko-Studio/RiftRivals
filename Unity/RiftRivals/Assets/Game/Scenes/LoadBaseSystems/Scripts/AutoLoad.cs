@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,15 @@ namespace Game.Scenes.LoadBaseSystems.Scripts
     {
         private void Start()
         {
-            SceneManager.LoadScene("Start");
+            StartCoroutine(LoadingScreen());
+        }
+
+        private IEnumerator LoadingScreen()
+        {
+            AsyncOperation load = SceneManager.LoadSceneAsync("Start");
+            load.allowSceneActivation = false;
+            yield return new WaitForSeconds(5);
+            load.allowSceneActivation = true;
         }
     }
 }
