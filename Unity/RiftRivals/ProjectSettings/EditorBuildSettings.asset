@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Shop/Shop.unity
     guid: 8b8d0820979fe084a92c9f1456aa042c
+  - enabled: 1
+    path: Assets/Game/Scenes/Gacha/Gacha.unity
+    guid: 69ca0709283cbff47840e8bb981f5706
+  - enabled: 1
+    path: Assets/Game/Scenes/Team/Team.unity
+    guid: a3df4f4f53ac8074498fab2dbe284fff
   m_configObjects: {}

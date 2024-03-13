@@ -15,7 +15,7 @@ namespace Game.Scenes.LoadBaseSystems.Scripts
         {
             AsyncOperation load = SceneManager.LoadSceneAsync("Start");
             load.allowSceneActivation = false;
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(8);
             load.allowSceneActivation = true;
         }
     }
