@@ -8,6 +8,14 @@ namespace Framework.RiftRivals
     {
         public int id;
         public string displayName;
+        public string teamName;
+        public int pictureId;
+    }
+    
+    [Serializable]
+    public class FindProfileInfo
+    {
+        public int profileId;
     }
 
     public class ProfileManager : MonoBehaviour
@@ -22,6 +30,27 @@ namespace Framework.RiftRivals
                 Destroy(gameObject);
             
             DontDestroyOnLoad(gameObject);
+        }
+
+        public void GetProfile(Action<Profile> onSuccess, Action<string> onError)
+        {
+            ConnectionManager.Instance.Get(Routes.Profile, res => {
+                Profile profile = JsonUtility.FromJson<Profile>(res);
+                onSuccess(profile);
+            }, err => {
+                onError(err.message);
+            });
+        }
+        
+        public void FindProfile(FindProfileInfo findProfileInfo, Action<Profile> onSuccess, Action<string> onError)
+        {
+            string data = JsonUtility.ToJson(findProfileInfo);
+            ConnectionManager.Instance.Post(Routes.Profile, data, res => {
+                Profile profile = JsonUtility.FromJson<Profile>(res);
+                onSuccess(profile);
+            }, err => {
+                onError(err.message);
+            });
         }
     }
 }

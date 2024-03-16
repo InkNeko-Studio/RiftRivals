@@ -7,7 +7,8 @@ import { ProfileModule } from './profile/profile.module';
 import { Profile } from './profile/entities/profile.entity';
 import { Wallet } from './wallet/entities/wallet.entity';
 import { WalletModule } from './wallet/wallet.module';
-import { Friends } from './profile/entities/friends.entity';
+import { Friends } from './friends/entities/friends.entity';
+import { FriendsModule } from './friends/friends.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { Friends } from './profile/entities/friends.entity';
     AuthModule,
     UserModule,
     ProfileModule,
+    FriendsModule,
     WalletModule
   ],
 })

@@ -35,7 +35,9 @@ namespace Framework.Language.Data
 
         public string GetString(string code)
         {
-            return words[code];
+            if (words.TryGetValue(code, out var s))
+                return s;
+            return code;
         }
     }
 }

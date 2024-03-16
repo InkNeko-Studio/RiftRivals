@@ -26,6 +26,8 @@ export class UserService {
 
         user.profile = new Profile();
         user.profile.displayName = user.username;
+        user.profile.teamName = user.username + "'s Team";
+        user.profile.pictureId = 0;
 
         user.wallet = new Wallet();
         user.wallet.fans = 0;

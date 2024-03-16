@@ -7,4 +7,10 @@ export class Profile {
   
     @Column({ type: 'varchar', length: 12 })
     displayName: string;
+    
+    @Column({ type: 'varchar', length: 16 })
+    teamName: string;
+
+    @Column({ type: 'integer' })
+    pictureId: number;
 }
