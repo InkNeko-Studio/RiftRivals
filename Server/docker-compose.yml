@@ -14,16 +14,29 @@ services:
       - rift-rivals-network
     tty: true
 
+  # rift-rivals-server:
+  #   image: node:21.1.0-alpine
+  #   container_name: rift-rivals-server
+  #   ports:
+  #     - '3000:3000'
+  #   entrypoint: npm run start
+  #   networks:
+  #     - rift-rivals-network
+  #   volumes:
+  #     - ./rift-rivals:/root/rift-rivals
+  #   working_dir: /root/rift-rivals
+  #   depends_on:
+  #     - rift-rivals-database
+
   rift-rivals-server:
-    image: node:21.1.0-alpine
     container_name: rift-rivals-server
+    build:
+      context: ./rift-rivals
     ports:
       - '3000:3000'
-    entrypoint: npm run start
+    entrypoint: npm run start:prod
     networks:
       - rift-rivals-network
-    volumes:
-      - ./rift-rivals:/root/rift-rivals
     working_dir: /root/rift-rivals
     depends_on:
       - rift-rivals-database

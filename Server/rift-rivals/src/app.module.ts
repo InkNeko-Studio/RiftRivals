@@ -8,17 +8,21 @@ import { Profile } from './profile/entities/profile.entity';
 import { Wallet } from './wallet/entities/wallet.entity';
 import { WalletModule } from './wallet/wallet.module';
 import { Friends } from './profile/entities/friends.entity';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'rift-rivals-database',
-      port: 5432,
-      password: 'riftpassword',
-      username: 'riftuser',
+      host: process.env.DATABASE_HOST,
+      extra: {
+        "socketPath": process.env.DATABASE_HOST
+      },
+      password: process.env.DATABASE_PASSWORD,
+      username: process.env.DATABASE_USERNAME,
       entities: [User, Profile, Friends, Wallet],
-      database: 'riftdb',
+      database: process.env.DATABASE_DB,
       synchronize: true,
       logging: true,
     }),
