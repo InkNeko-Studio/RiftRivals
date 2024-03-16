@@ -33,7 +33,7 @@ export class ProfileController {
     }
     
     @UseGuards(AuthGuard('jwt'))
-    @Post("/friends/requests")
+    @Post("/friends/send")
     sendFriendRequest(@Request() req, @Body() friendRequestDto: FriendRequestDto) {
         return this.profileService.sendFriendRequest(req.user.username, friendRequestDto.friendId);
     }
