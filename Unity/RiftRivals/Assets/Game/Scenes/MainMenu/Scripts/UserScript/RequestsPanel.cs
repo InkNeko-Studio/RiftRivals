@@ -2,7 +2,7 @@ using System;
 using Framework.RiftRivals;
 using UnityEngine;
 
-namespace Game.Scenes.MainMenu.Scripts
+namespace Game.Scenes.MainMenu.Scripts.UserScript
 {
     public class RequestsPanel : MonoBehaviour
     {

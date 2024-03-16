@@ -3,7 +3,7 @@ using Framework.RiftRivals;
 using TMPro;
 using UnityEngine;
 
-namespace Game.Scenes.MainMenu.Scripts
+namespace Game.Scenes.MainMenu.Scripts.UserScript
 {
     public class ProfilePanel : MonoBehaviour
     {

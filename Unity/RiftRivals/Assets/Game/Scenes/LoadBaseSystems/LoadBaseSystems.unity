@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd5fd8f7454d0648a0df741e557c735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: http://localhost:3000
+  url: http://26.221.188.201:3000
   token: 
 --- !u!1 &1281807966
 GameObject:

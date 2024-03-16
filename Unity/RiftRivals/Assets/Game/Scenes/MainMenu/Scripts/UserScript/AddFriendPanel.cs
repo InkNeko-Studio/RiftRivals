@@ -3,7 +3,7 @@ using Game.Shared.UI.Popup;
 using TMPro;
 using UnityEngine;
 
-namespace Game.Scenes.MainMenu.Scripts
+namespace Game.Scenes.MainMenu.Scripts.UserScript
 {
     public class AddFriendPanel : MonoBehaviour
     {
