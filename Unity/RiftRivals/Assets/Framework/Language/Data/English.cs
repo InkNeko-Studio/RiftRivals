@@ -6,6 +6,7 @@ namespace Framework.Language.Data
     {
         private Dictionary<string, string> words = new Dictionary<string, string>()
         {
+            #region Login
             { "login", "Login" },
             { "loginfailed", "Login Failed!" },
             { "register", "Register" },
@@ -22,6 +23,8 @@ namespace Framework.Language.Data
             { "password", "Password" },
             { "passwordempty", "Password should not be empty!" },
             { "passwordshort", "Password must have at least 8 characters!" },
+            #endregion
+            #region Menu
             { "playmode", "Battle" },
             { "teambutton", "Team" },
             { "pvebutton", "PvE" },
@@ -31,6 +34,16 @@ namespace Framework.Language.Data
             { "battlebackbutton", "Back" },
             { "userbutton", "User" },
             { "configbutton", "Config" },
+            #endregion
+
+            #region Gacha
+            { "out", "Leave" },
+            
+
+            #endregion
+            
+            
+            
         };
 
         public string GetString(string code)

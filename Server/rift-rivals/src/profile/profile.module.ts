@@ -1,18 +1,16 @@
-import { Module, forwardRef } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { ProfileService } from './profile.service';
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { Profile } from "src/profile/entities/profile.entity";
 import { JwtStrategy } from 'src/auth/strategies/jwt.strategy';
 import { PassportModule } from '@nestjs/passport';
 import { ProfileController } from './profile.controller';
-import { UserModule } from 'src/user/user.module';
-import { Friends } from './entities/friends.entity';
+import { User } from 'src/user/entities/user.entity';
 
 @Module({
   imports: [
-    UserModule,
     PassportModule,
-    TypeOrmModule.forFeature([Profile, Friends]),
+    TypeOrmModule.forFeature([User, Profile]),
   ],
   controllers: [ProfileController],
   providers: [ProfileService, JwtStrategy],

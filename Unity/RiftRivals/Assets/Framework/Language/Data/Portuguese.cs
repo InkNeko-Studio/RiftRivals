@@ -22,20 +22,26 @@ namespace Framework.Language.Data
             { "password", "Senha" },
             { "passwordempty", "Senha não pode estar vazia!" },
             { "passwordshort", "Senha deve ter no mínimo 8 caracteres!" },
-            { "playmode", "Batalha" },
-            { "teambutton", "Equipe" },
-            { "pvebutton", "PvE"},
-            { "expeditionbutton", "Expedição" },
+            { "playmode", "BATALHA" },
+            { "teambutton", "EQUIPE" },
+            { "pvebutton", "PVE"},
+            { "expeditionbutton", "EXPEDICAO" },
             { "pvpbutton", "PvP" },
-            { "rankedbutton", "Ranqueada" },
-            { "battlebackbutton", "Voltar" },
-            { "userbutton", "Usuario" },
-            { "configbutton", "Confi" },
+            { "rankedbutton", "RANQUEADA" },
+            { "battlebackbutton", "VOLTAR" },
+            { "userbutton", "USUARIO" },
+            { "configbutton", "CONFIG" },
+            
+            #region Gacha
+            { "out", "Sair" },
+            #endregion
         };
 
         public string GetString(string code)
         {
-            return words[code];
+            if (words.TryGetValue(code, out var s))
+                return s;
+            return code;
         }
     }
 }

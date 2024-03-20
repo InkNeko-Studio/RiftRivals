@@ -23,4 +23,10 @@ export class User {
     @OneToOne(() => Wallet, { cascade: true })
     @JoinColumn()
     wallet: Wallet;
+
+    @Column({ type: "date" })
+    creationDate: Date;
+    
+    @Column({ type: "date" })
+    lastLogin: Date;
 }

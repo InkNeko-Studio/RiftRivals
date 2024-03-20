@@ -26,11 +26,16 @@ export class UserService {
 
         user.profile = new Profile();
         user.profile.displayName = user.username;
+        user.profile.teamName = user.username + "'s Team";
+        user.profile.pictureId = 0;
 
         user.wallet = new Wallet();
         user.wallet.fans = 0;
         user.wallet.coins = 0;
         user.wallet.diamonds = 0;
+
+        user.creationDate = new Date();
+        user.lastLogin = new Date();
 
         return this.userRepository.save(user);
     }
@@ -57,6 +62,13 @@ export class UserService {
         user.username = updateUserDto.username;
         user.email = updateUserDto.email;
         user.password = updateUserDto.password;
+        user.id = id;
+        return this.userRepository.save(user);
+    }
+    
+    updateUserLoginDate(id: number): Promise<User> {
+        const user: User = new User();
+        user.lastLogin = new Date();
         user.id = id;
         return this.userRepository.save(user);
     }
