@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Profile } from "../../profile/entities/profile.entity";
 
 @Entity()
@@ -16,7 +16,7 @@ export class Friends {
     @Column()
     receiverId: number;
 
-    @OneToOne(() => Profile)
+    @ManyToOne(() => Profile)
     @JoinColumn({ foreignKeyConstraintName: "receiverId", referencedColumnName: "id" })
     receiver: Profile;
     

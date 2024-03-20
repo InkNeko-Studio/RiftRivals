@@ -9,6 +9,11 @@ import { Wallet } from './wallet/entities/wallet.entity';
 import { WalletModule } from './wallet/wallet.module';
 import { Friends } from './friends/entities/friends.entity';
 import { FriendsModule } from './friends/friends.module';
+import { CharacterModule } from './character/character.module';
+import { CharacterBase } from './character/entities/character-base.entity';
+import { MintedCharacter } from './character/entities/minted-character.entity';
+import AdminModule from './admin/admin.module';
+import { Admin } from './admin/entities/admin.entity';
 
 @Module({
   imports: [
@@ -18,7 +23,7 @@ import { FriendsModule } from './friends/friends.module';
       port: 5432,
       password: 'riftpassword',
       username: 'riftuser',
-      entities: [User, Profile, Friends, Wallet],
+      entities: [Admin, User, Profile, Friends, Wallet, CharacterBase, MintedCharacter],
       database: 'riftdb',
       synchronize: true,
       logging: true,
@@ -27,7 +32,9 @@ import { FriendsModule } from './friends/friends.module';
     UserModule,
     ProfileModule,
     FriendsModule,
-    WalletModule
+    WalletModule,
+    CharacterModule,
+    AdminModule,
   ],
 })
 export class AppModule {}
