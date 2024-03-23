@@ -1,6 +1,7 @@
-import { Controller, Get, Request, UseGuards } from "@nestjs/common";
+import { Body, Controller, Get, Post, Request, UseGuards } from "@nestjs/common";
 import { CharacterService } from "./character.service";
 import { AuthGuard } from "@nestjs/passport";
+import { MintCharacterDto } from "./dto/mint-character.dto";
 
 @Controller('character')
 export class CharacterController {
@@ -8,14 +9,19 @@ export class CharacterController {
 
     @UseGuards(AuthGuard('jwt'))
     @Get()
-    getCurrentProfile(@Request() req) {
+    getMintedCharacters(@Request() req) {
         return this.characterService.getMintedCharacters(req.user.id);
     }
-
     
     @UseGuards(AuthGuard('jwt'))
-    @Get('mint')
-    mintCharacter(@Request() req) {
-        return this.characterService.mintCharacter(req.user.id);
+    @Get('banners')
+    getBanners(@Request() req) {
+        return this.characterService.getBanners();
+    }
+    
+    @UseGuards(AuthGuard('jwt'))
+    @Post('mint')
+    mintCharacter(@Request() req, @Body() mintCharacterDto: MintCharacterDto) {
+        return this.characterService.mintCharacter(req.user.id, mintCharacterDto.bannerId);
     }
 }

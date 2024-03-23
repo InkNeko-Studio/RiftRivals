@@ -1,12 +1,18 @@
-import { Entity, JoinColumn, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
-import { CharacterBase } from "./character-base.entity";
+import { Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BannerEntry } from "./banner-entry.entity";
 
 @Entity()
 export class Banner {
     @PrimaryGeneratedColumn()
     id: number;
+
+    @Column({ type: "varchar", length: 32 })
+    name: string;
+    
+    @Column({ type: "integer" })
+    price: number;
   
-    @ManyToMany(() => CharacterBase)
+    @OneToMany(() => BannerEntry, (bannerEntry) => bannerEntry.banner)
     @JoinColumn()
-    characters: CharacterBase[];
+    characters: BannerEntry[];
 }

@@ -14,6 +14,8 @@ import { CharacterBase } from './character/entities/character-base.entity';
 import { MintedCharacter } from './character/entities/minted-character.entity';
 import AdminModule from './admin/admin.module';
 import { Admin } from './admin/entities/admin.entity';
+import { Banner } from './character/entities/banner.entity';
+import { BannerEntry } from './character/entities/banner-entry.entity';
 
 @Module({
   imports: [
@@ -23,7 +25,12 @@ import { Admin } from './admin/entities/admin.entity';
       port: 5432,
       password: 'riftpassword',
       username: 'riftuser',
-      entities: [Admin, User, Profile, Friends, Wallet, CharacterBase, MintedCharacter],
+      entities: [
+        Admin, User, Profile,
+        Friends, Wallet,
+        Banner, BannerEntry,
+        CharacterBase, MintedCharacter
+      ],
       database: 'riftdb',
       synchronize: true,
       logging: true,
@@ -37,4 +44,4 @@ import { Admin } from './admin/entities/admin.entity';
     AdminModule,
   ],
 })
-export class AppModule {}
+export class AppModule { }

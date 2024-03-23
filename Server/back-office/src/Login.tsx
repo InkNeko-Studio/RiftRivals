@@ -1,26 +1,16 @@
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
+import { RequestManager } from "./controllers/RequestManager";
 
 export default function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     function onLogin() {
-        fetch("http://" + location.hostname + ":3000/admin/login", {
-            mode: "cors",
-            method: "POST",
-            headers: {
-                "Content-type": "application/json"
-            },
-            body: JSON.stringify({
-                username: username,
-                password: password
-            }),
-        })
-            .then((response) => response.json())
+        RequestManager.post("admin/login", {username, password})
             .then((data) => {
                 localStorage.setItem("token", data.accessToken);
-                window.location.href = "/dashboard"
+                window.location.href = "/dashboard";
             });
     }
 

@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import React from "react";
 import { useEffect, useState } from "react";
+import { RequestManager } from "../controllers/RequestManager";
 
 type RouteUsersState = {
     rows: any[]
@@ -81,34 +82,25 @@ export default class RouteUsers extends React.Component {
 
 
     fetchUsers() {
-        fetch("http://" + location.hostname + ":3000/admin/users", {
-            headers: {
-                "Authorization": "Bearer " + localStorage.getItem("token")
-            }
-        })
-            .then(response => response.json())
-            .then(data => {
-                let newRows: any[] = [];
-                data.forEach((d: any) => {
-                    let row: any = {};
-                    row.id = d.id;
-                    row.username = d.username;
-                    row.displayName = d.profile.displayName;
-                    row.email = d.email;
-                    row.fans = d.wallet.fans;
-                    row.coins = d.wallet.coins;
-                    row.diamonds = d.wallet.diamonds;
-                    row.creationDate = d.creationDate;
-                    row.lastLogin = d.lastLogin;
-                    newRows.push(row);
-                })
-                this.setState(() => ({
-                    rows: newRows
-                }));
+        RequestManager.get("admin/users").then(data => {
+            let newRows: any[] = [];
+            data.forEach((d: any) => {
+                let row: any = {};
+                row.id = d.id;
+                row.username = d.username;
+                row.displayName = d.profile.displayName;
+                row.email = d.email;
+                row.fans = d.wallet.fans;
+                row.coins = d.wallet.coins;
+                row.diamonds = d.wallet.diamonds;
+                row.creationDate = d.creationDate;
+                row.lastLogin = d.lastLogin;
+                newRows.push(row);
             })
-            .catch(() => {
-                window.location.href = "/login";
-            });
+            this.setState(() => ({
+                rows: newRows
+            }));
+        });
     }
 
     render() {
@@ -128,16 +120,8 @@ export default class RouteUsers extends React.Component {
                         pageSizeOptions={[5]}
                         //checkboxSelection
                         disableRowSelectionOnClick
-                        processRowUpdate={async (updatedRow, originalRow) => {
-                            await fetch("http://" + location.hostname + ":3000/admin/users", {
-                                mode: "cors",
-                                method: "POST",
-                                headers: {
-                                    "Authorization": "Bearer " + localStorage.getItem("token"),
-                                    "Content-type": "application/json"
-                                },
-                                body: JSON.stringify(updatedRow),
-                            });
+                        processRowUpdate={async (updatedRow) => {
+                            await RequestManager.post("admin/users", updatedRow);
                             return updatedRow;
                         }}
                         onProcessRowUpdateError={() => { }}

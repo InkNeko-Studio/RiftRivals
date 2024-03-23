@@ -19,6 +19,6 @@ export const SideMenuData = [
     {
         name: "Banners",
         icon: <ViewCarousel />,
-        path: "/dashboard/users",
+        path: "/dashboard/banners",
     },
 ];

@@ -7,11 +7,13 @@ import { User } from 'src/user/entities/user.entity';
 import { CharacterController } from './character.controller';
 import { CharacterService } from './character.service';
 import { MintedCharacter } from './entities/minted-character.entity';
+import { Banner } from './entities/banner.entity';
+import { BannerEntry } from './entities/banner-entry.entity';
 
 @Module({
   imports: [
     PassportModule,
-    TypeOrmModule.forFeature([User, CharacterBase, MintedCharacter]),
+    TypeOrmModule.forFeature([User, Banner, BannerEntry, CharacterBase, MintedCharacter]),
   ],
   controllers: [CharacterController],
   providers: [CharacterService, JwtStrategy],

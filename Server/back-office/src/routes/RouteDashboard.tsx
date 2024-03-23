@@ -1,6 +1,7 @@
 import { Card, CardContent, Grid, Typography } from "@mui/material";
 import { LineChart } from "@mui/x-charts";
 import React from "react";
+import { RequestManager } from "../controllers/RequestManager";
 
 type RouteDashboardState = {
     usersCount: any[]
@@ -12,20 +13,11 @@ export default class RouteDashboard extends React.Component {
     };
 
     componentDidMount() {
-        fetch("http://" + location.hostname + ":3000/admin/users/count", {
-            headers: {
-                "Authorization": "Bearer " + localStorage.getItem("token")
-            }
-        })
-            .then(response => response.json())
-            .then(data => {
-                this.setState(() => ({
-                    usersCount: data
-                }));
-            })
-            .catch(() => {
-                window.location.href = "/login";
-            });
+        RequestManager.get("admin/users/count").then(data => {
+            this.setState(() => ({
+                usersCount: data
+            }));
+        });
     }
 
     render() {
@@ -91,7 +83,7 @@ export default class RouteDashboard extends React.Component {
                                         {
                                             data: [0, 1, 2, 3, 4, 5],
                                             valueFormatter: (d) => {
-                                                switch(d) {
+                                                switch (d) {
                                                     case 0:
                                                         return "Out/23";
                                                     case 1:
@@ -128,12 +120,12 @@ export default class RouteDashboard extends React.Component {
                                     Profit Gain
                                 </Typography>
                                 <LineChart
-                                    margin={{left: 60}}
+                                    margin={{ left: 60 }}
                                     xAxis={[
                                         {
                                             data: [0, 1, 2, 3, 4, 5],
                                             valueFormatter: (d) => {
-                                                switch(d) {
+                                                switch (d) {
                                                     case 0:
                                                         return "Out/23";
                                                     case 1:
@@ -156,14 +148,14 @@ export default class RouteDashboard extends React.Component {
                                             curve: 'linear',
                                             data: [3421, 4824, 5212, 6742, 5965, 7523],
                                             valueFormatter: (d) => {
-                                                return "R$ "+ d;
+                                                return "R$ " + d;
                                             }
                                         },
                                     ]}
                                     yAxis={[
                                         {
                                             valueFormatter: (d) => {
-                                                return "R$ "+ d;
+                                                return "R$ " + d;
                                             }
                                         }
                                     ]}
@@ -184,7 +176,7 @@ export default class RouteDashboard extends React.Component {
                                         {
                                             data: [0, 1, 2, 3, 4, 5],
                                             valueFormatter: (d) => {
-                                                switch(d) {
+                                                switch (d) {
                                                     case 0:
                                                         return "15/03";
                                                     case 1:
