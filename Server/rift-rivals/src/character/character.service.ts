@@ -84,6 +84,8 @@ export class CharacterService {
 
         await this.userRepository.save(user);
 
-        return await this.mintedCharacterRepository.save(mintedCharacter);
+        let ret = await this.mintedCharacterRepository.save(mintedCharacter);
+        delete ret.user;
+        return ret;
     }
 }

@@ -11,6 +11,9 @@ import AdminUserService from "./submodules/admin.user.service";
 import { CharacterBase } from "src/character/entities/character-base.entity";
 import AdminCharacterController from "./submodules/admin.character.controller";
 import AdminCharacterService from "./submodules/admin.character.service";
+import AdminBannerController from "./submodules/admin.banner.controller";
+import { Banner } from "src/character/entities/banner.entity";
+import AdminBannerService from "./submodules/admin.banner.service";
 
 @Module({
     imports: [
@@ -20,17 +23,19 @@ import AdminCharacterService from "./submodules/admin.character.service";
             secret: "ultrasecretkey",
             signOptions: { expiresIn: "24h" }
         }),
-        TypeOrmModule.forFeature([Admin, User, CharacterBase]),
+        TypeOrmModule.forFeature([Admin, User, CharacterBase, Banner]),
     ],
     controllers: [
         AdminController,
         AdminUserController,
         AdminCharacterController,
+        AdminBannerController,
     ],
     providers: [
         AdminService,
         AdminUserService,
         AdminCharacterService,
+        AdminBannerService,
     ]
 })
 export default class AdminModule {

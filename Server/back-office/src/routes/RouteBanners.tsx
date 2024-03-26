@@ -1,4 +1,5 @@
 import React from "react";
+import { RequestManager } from "../controllers/RequestManager";
 
 export default class RouteBanners extends React.Component {
     constructor(props: any) {
@@ -6,6 +7,9 @@ export default class RouteBanners extends React.Component {
     }
 
     componentDidMount() {
+        RequestManager.get("admin/banner").then(data => {
+            console.log(data);
+        });
     }
 
     render() {

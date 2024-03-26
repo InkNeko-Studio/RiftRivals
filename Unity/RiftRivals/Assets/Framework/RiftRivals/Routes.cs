@@ -12,6 +12,8 @@
         public static string FriendRequests = "/friends/requests";
         public static string SendFriendRequest = "/friends/send";
         public static string AcceptFriendRequest = "/friends/accept";
+
+        public static string Character = "/character";
         
         public static string Wallet = "/wallet";
         

@@ -8,19 +8,19 @@ import { FindProfileDto } from "./dto/find-profile.dto";
 export class ProfileController {
     constructor(private profileService: ProfileService) {}
 
-    @UseGuards(AuthGuard('jwt'))
+    @UseGuards(AuthGuard('auth-jwt'))
     @Get()
     getCurrentProfile(@Request() req) {
         return this.profileService.getUserProfile(req.user.id);
     }
 
-    @UseGuards(AuthGuard('jwt'))
+    @UseGuards(AuthGuard('auth-jwt'))
     @Post()
     findProfile(@Body() findProfileDto: FindProfileDto) {
         return this.profileService.getProfileById(findProfileDto.profileId);
     }
     
-    @UseGuards(AuthGuard('jwt'))
+    @UseGuards(AuthGuard('auth-jwt'))
     @Post('update')
     updateCurrentProfile(@Request() req, @Body() updateProfileDto: UpdateProfileDto) {
         return this.profileService.updateProfile(req.user.id, updateProfileDto);

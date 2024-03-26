@@ -6,7 +6,7 @@ import { AuthGuard } from "@nestjs/passport";
 export class WalletController {
     constructor(private walletService: WalletService) { }
 
-    @UseGuards(AuthGuard('jwt'))
+    @UseGuards(AuthGuard('auth-jwt'))
     @Get()
     getWallet(@Request() req) {
         return this.walletService.getWallet(req.user.username);

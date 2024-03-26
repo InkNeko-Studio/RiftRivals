@@ -7,21 +7,25 @@ import { MintCharacterDto } from "./dto/mint-character.dto";
 export class CharacterController {
     constructor(private characterService: CharacterService) {}
 
-    @UseGuards(AuthGuard('jwt'))
+    @UseGuards(AuthGuard('auth-jwt'))
     @Get()
-    getMintedCharacters(@Request() req) {
-        return this.characterService.getMintedCharacters(req.user.id);
+    async getMintedCharacters(@Request() req) {
+        return {
+            mintedCharacters: await this.characterService.getMintedCharacters(req.user.id)
+        };
     }
     
-    @UseGuards(AuthGuard('jwt'))
+    @UseGuards(AuthGuard('auth-jwt'))
     @Get('banners')
-    getBanners(@Request() req) {
-        return this.characterService.getBanners();
+    async getBanners(@Request() req) {
+        return {
+            banners: await this.characterService.getBanners()
+        };
     }
     
-    @UseGuards(AuthGuard('jwt'))
+    @UseGuards(AuthGuard('auth-jwt'))
     @Post('mint')
-    mintCharacter(@Request() req, @Body() mintCharacterDto: MintCharacterDto) {
-        return this.characterService.mintCharacter(req.user.id, mintCharacterDto.bannerId);
+    async mintCharacter(@Request() req, @Body() mintCharacterDto: MintCharacterDto) {
+        return await this.characterService.mintCharacter(req.user.id, mintCharacterDto.bannerId);
     }
 }
