@@ -27,6 +27,8 @@ namespace Framework.RiftRivals
     public class CharacterManager : MonoBehaviour
     {
         public static CharacterManager Instance;
+
+        public CharacterInfo[] charactersInfo;
         
         public void Awake()
         {
@@ -46,6 +48,12 @@ namespace Framework.RiftRivals
             }, err => {
                 onError(err.message);
             });
+        }
+
+        public CharacterInfo GetCharacterInfo(int id)
+        {
+            if (id > charactersInfo.Length) return new CharacterInfo();
+            return charactersInfo[id - 1];
         }
     }
 }

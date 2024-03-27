@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Framework.RiftRivals
 {
@@ -14,6 +15,7 @@ namespace Framework.RiftRivals
     public class LoginResponse
     {
         public string accessToken;
+        public string refreshToken;
     }
     
     [Serializable]
@@ -43,7 +45,34 @@ namespace Framework.RiftRivals
             string data = JsonUtility.ToJson(loginInfo);
             ConnectionManager.Instance.Post(Routes.AuthLogin, data, res => {
                 LoginResponse loginResponse = JsonUtility.FromJson<LoginResponse>(res);
-                ConnectionManager.Instance.token = loginResponse.accessToken;
+                
+                ConnectionManager.Instance.accessToken = loginResponse.accessToken;
+                ConnectionManager.Instance.refreshToken = loginResponse.refreshToken;
+                
+                PlayerPrefs.SetString("refreshToken", loginResponse.refreshToken);
+                onSuccess();
+            }, exception => {
+                onError(exception.message);
+            });
+        }
+
+        public void Logout()
+        {
+            ConnectionManager.Instance.accessToken = "";
+            ConnectionManager.Instance.refreshToken = "";
+            PlayerPrefs.SetString("refreshToken", "");
+            SceneManager.LoadScene("Start");
+        }
+
+        public void Reauthenticate(Action onSuccess, Action<string> onError)
+        {
+            ConnectionManager.Instance.Get(Routes.AuthRefresh, res => {
+                LoginResponse loginResponse = JsonUtility.FromJson<LoginResponse>(res);
+                
+                ConnectionManager.Instance.accessToken = loginResponse.accessToken;
+                ConnectionManager.Instance.refreshToken = loginResponse.refreshToken;
+                
+                PlayerPrefs.SetString("refreshToken", loginResponse.refreshToken);
                 onSuccess();
             }, exception => {
                 onError(exception.message);

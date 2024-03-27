@@ -22,7 +22,8 @@ namespace Framework.RiftRivals
         }
         
         public string url;
-        public string token;
+        public string accessToken;
+        public string refreshToken;
         
         [Serializable]
         public struct RestException
@@ -40,22 +41,34 @@ namespace Framework.RiftRivals
             public int statusCode;
         }
 
+        public void HandleUnauthorized()
+        {
+            accessToken = refreshToken;
+            AuthManager.Instance.Reauthenticate(() => {
+            }, err => {
+                SceneManager.LoadScene("Start");;
+            });
+        }
+
         public void Get(string route, Action<string> onData, Action<RestException> onError)
         {
             StartCoroutine(GetCoroutine(route, onData, err => {
-                if (err.statusCode == 401)
-                    SceneManager.LoadScene("Start");
-                onError(err);
+                if (err.statusCode == 401 && accessToken != refreshToken)
+                    HandleUnauthorized();
+                else
+                    onError(err);
             }));
         }
         
         private IEnumerator GetCoroutine(string route, Action<string> onData, Action<RestException> onError)
         {
             UnityWebRequest request = UnityWebRequest.Get(url + route);
-            request.SetRequestHeader("Authorization", "Bearer " + token);
+            request.SetRequestHeader("Authorization", "Bearer " + accessToken);
             yield return request.SendWebRequest();
 
-            if (request.result != UnityWebRequest.Result.Success)
+            if (request.result == UnityWebRequest.Result.ConnectionError)
+                SceneManager.LoadScene("ConnectionFailed");
+            else if (request.result != UnityWebRequest.Result.Success)
             {
                 RestException restException = JsonUtility.FromJson<RestException>(request.downloadHandler.text);
                 if (string.IsNullOrEmpty(restException.message))
@@ -71,16 +84,23 @@ namespace Framework.RiftRivals
 
         public void Post(string route, string data, Action<string> onData, Action<RestException> onError)
         {
-            StartCoroutine(PostCoroutine(route, data, onData, onError));
+            StartCoroutine(PostCoroutine(route, data, onData, err => {
+                if (err.statusCode == 401)
+                    HandleUnauthorized();
+                else
+                    onError(err);
+            }));
         }
         
         private IEnumerator PostCoroutine(string route, string data, Action<string> onData, Action<RestException> onError)
         {
             UnityWebRequest request = UnityWebRequest.Post(url + route, data, "application/json");
-            request.SetRequestHeader("Authorization", "Bearer " + token);
+            request.SetRequestHeader("Authorization", "Bearer " + accessToken);
             yield return request.SendWebRequest();
 
-            if (request.result != UnityWebRequest.Result.Success)
+            if (request.result == UnityWebRequest.Result.ConnectionError)
+                SceneManager.LoadScene("ConnectionFailed");
+            else if (request.result != UnityWebRequest.Result.Success)
             {
                 RestException restException = JsonUtility.FromJson<RestException>(request.downloadHandler.text);
                 if (string.IsNullOrEmpty(restException.message))

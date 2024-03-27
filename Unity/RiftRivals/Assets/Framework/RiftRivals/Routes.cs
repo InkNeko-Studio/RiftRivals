@@ -3,6 +3,7 @@
     public static class Routes
     {
         public static string AuthLogin = "/auth/login";
+        public static string AuthRefresh = "/auth/refresh";
         public static string AuthRegister = "/auth/register";
         
         public static string Profile = "/profile";
@@ -14,6 +15,8 @@
         public static string AcceptFriendRequest = "/friends/accept";
 
         public static string Character = "/character";
+        public static string Banner = "/character/banners";
+        public static string Mint = "/character/mint";
         
         public static string Wallet = "/wallet";
         

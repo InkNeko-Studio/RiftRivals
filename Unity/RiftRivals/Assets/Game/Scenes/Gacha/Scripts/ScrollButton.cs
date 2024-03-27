@@ -7,31 +7,34 @@ namespace Game.Scenes.Gacha.Scripts
 {
     public class ScrollButton : MonoBehaviour
     {
-        // Start is called before the first frame update
-        public Scrollbar gachascroll;
+        public Transform gachaList;
+        public Scrollbar gachaScroll;
         public Button esq;
         public Button dir;
 
         void Awake()
         {
-            gachascroll.value = 0;
+            gachaScroll.value = 0;
             JumpToGacha(0);
         }
 
-        void Start()
-        {
-        
-        }
-
-    
         void Update()
         {
-        
+            if (gachaList.childCount <= 1)
+            {
+                esq.gameObject.SetActive(false);
+                dir.gameObject.SetActive(false);
+            }
+            else
+            {
+                esq.gameObject.SetActive(true);
+                dir.gameObject.SetActive(true);
+            }
         }
 
         public void JumpToGacha(int gacha)
         {
-            gachascroll.value = gacha;
+            gachaScroll.value = gacha;
             if (gacha == 1)
             {
                 dir.interactable = false;

@@ -14,6 +14,12 @@ export class AuthController {
         return this.authService.login(req.user);
     }
 
+    @UseGuards(AuthGuard('refresh-jwt'))
+    @Get('refresh')
+    refresh(@Request() req) {
+        return this.authService.refresh(req.user);
+    }
+
     @Post('register')
     register(@Body() createUserDto: CreateUserDto) {
         return this.authService.register(createUserDto);

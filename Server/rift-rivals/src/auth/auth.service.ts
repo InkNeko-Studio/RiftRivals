@@ -17,8 +17,29 @@ export class AuthService {
         await this.userService.updateUserLoginDate(user.id);
         const payload = { username: user.username, id: user.id };
         return {
-            accessToken: this.jwtService.sign(payload),
+            accessToken: this.jwtService.sign(payload, {
+                secret: "keyaccess",
+                expiresIn: "30m",
+            }),
+            refreshToken: this.jwtService.sign(payload, {
+                secret: "keyrefresh",
+                expiresIn: "8h",
+            }),
         };
+    }
+
+    async refresh(user: User) {
+        const payload = { username: user.username, id: user.id };
+        return {
+            accessToken: this.jwtService.sign(payload, {
+                secret: "keyaccess",
+                expiresIn: "30m",
+            }),
+            refreshToken: this.jwtService.sign(payload, {
+                secret: "keyrefresh",
+                expiresIn: "8h",
+            }),
+        }
     }
 
     async register(createUserDto: CreateUserDto) {
