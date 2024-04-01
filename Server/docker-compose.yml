@@ -28,6 +28,20 @@ services:
     depends_on:
       - rift-rivals-database
 
+  rift-rivals-backoffice:
+    image: node:21.1.0-alpine
+    container_name: rift-rivals-backoffice
+    ports:
+      - '8000:8000'
+    entrypoint: npm run dev
+    networks:
+      - rift-rivals-network
+    volumes:
+      - ./back-office:/root/back-office
+    working_dir: /root/back-office
+    depends_on:
+      - rift-rivals-database
+
 networks:
   rift-rivals-network:
     driver: bridge

@@ -1,0 +1,89 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model admin {
+  id           Int      @id(map: "PK_e032310bcef831fb83101899b10") @default(autoincrement())
+  username     String   @unique(map: "UQ_5e568e001f9d1b91f67815c580f") @db.VarChar(16)
+  email        String   @unique(map: "UQ_de87485f6489f5d0995f5841952") @db.VarChar(64)
+  password     String   @db.VarChar(128)
+  creationDate DateTime @db.Date
+}
+
+model banner {
+  id           Int            @id(map: "PK_6d9e2570b3d85ba37b681cd4256") @default(autoincrement())
+  name         String         @db.VarChar(32)
+  price        Int
+  banner_entry banner_entry[]
+}
+
+model banner_entry {
+  id             Int            @id(map: "PK_3e591966834cb6e3f2b2e19462f") @default(autoincrement())
+  characterId    Int
+  percentage     Int
+  bannerId       Int?
+  banner         banner?        @relation(fields: [bannerId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_ee468efa5964a03a5f261d3b0ab")
+  character_base character_base @relation(fields: [characterId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "characterId")
+}
+
+model character_base {
+  id               Int                @id(map: "PK_7e98953bd1c18f3d549e8d7b174") @default(autoincrement())
+  name             String             @db.VarChar(16)
+  banner_entry     banner_entry[]
+  minted_character minted_character[]
+}
+
+model friends {
+  id                                  Int     @id(map: "PK_65e1b06a9f379ee5255054021e1") @default(autoincrement())
+  senderId                            Int     @unique(map: "REL_3e161d03f97566f6de690f8c93")
+  receiverId                          Int
+  accepted                            Boolean
+  profile_friends_receiverIdToprofile profile @relation("friends_receiverIdToprofile", fields: [receiverId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "receiverId")
+  profile_friends_senderIdToprofile   profile @relation("friends_senderIdToprofile", fields: [senderId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "senderId")
+}
+
+model minted_character {
+  id              Int             @id(map: "PK_45ff656ffb298bdb5240b477787") @default(autoincrement())
+  userId          Int
+  characterBaseId Int?
+  character_base  character_base? @relation(fields: [characterBaseId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_54078a64cb5a289630bf918771c")
+  user            user            @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "userId")
+}
+
+model profile {
+  id                                  Int       @id(map: "PK_3dd8bfc97e4a77c70971591bdcb") @default(autoincrement())
+  displayName                         String    @db.VarChar(16)
+  teamName                            String    @db.VarChar(20)
+  pictureId                           Int
+  friends_friends_receiverIdToprofile friends[] @relation("friends_receiverIdToprofile")
+  friends_friends_senderIdToprofile   friends?  @relation("friends_senderIdToprofile")
+  user                                user?
+}
+
+model user {
+  id               Int                @id(map: "PK_cace4a159ff9f2512dd42373760") @default(autoincrement())
+  username         String             @unique(map: "UQ_78a916df40e02a9deb1c4b75edb") @db.VarChar(16)
+  email            String             @unique(map: "UQ_e12875dfb3b1d92d7d7c5377e22") @db.VarChar(64)
+  password         String             @db.VarChar(128)
+  creationDate     DateTime           @db.Date
+  lastLogin        DateTime           @db.Date
+  profileId        Int?               @unique(map: "REL_9466682df91534dd95e4dbaa61")
+  walletId         Int?               @unique(map: "REL_922e8c1d396025973ec81e2a40")
+  minted_character minted_character[]
+  wallet           wallet?            @relation(fields: [walletId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_922e8c1d396025973ec81e2a402")
+  profile          profile?           @relation(fields: [profileId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_9466682df91534dd95e4dbaa616")
+}
+
+model wallet {
+  id       Int   @id(map: "PK_bec464dd8d54c39c54fd32e2334") @default(autoincrement())
+  fans     Int
+  coins    Int
+  diamonds Int
+  user     user?
+}
