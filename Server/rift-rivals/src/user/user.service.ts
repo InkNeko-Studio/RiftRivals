@@ -17,11 +17,14 @@ export class UserService {
     async create(createUserDto: CreateUserDto): Promise<User> {
         const user: User = new User();
 
-        var hash = createHash('sha512');
-        const password_data = hash.update(createUserDto.password, 'utf-8');
+        var password_hash = createHash('sha512');
+        const password_data = password_hash.update(createUserDto.password, 'utf-8');
+        
+        var email_hash = createHash('sha512');
+        const email_data = email_hash.update(createUserDto.email, 'utf-8');
 
         user.username = createUserDto.username;
-        user.email = createUserDto.email;
+        user.email = email_data.digest('hex');
         user.password = password_data.digest('hex');
 
         user.profile = new Profile();

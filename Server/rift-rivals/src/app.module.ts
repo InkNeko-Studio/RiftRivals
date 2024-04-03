@@ -12,8 +12,6 @@ import { FriendsModule } from './friends/friends.module';
 import { CharacterModule } from './character/character.module';
 import { CharacterBase } from './character/entities/character-base.entity';
 import { MintedCharacter } from './character/entities/minted-character.entity';
-import AdminModule from './admin/admin.module';
-import { Admin } from './admin/entities/admin.entity';
 import { Banner } from './character/entities/banner.entity';
 import { BannerEntry } from './character/entities/banner-entry.entity';
 
@@ -26,7 +24,7 @@ import { BannerEntry } from './character/entities/banner-entry.entity';
       password: 'riftpassword',
       username: 'riftuser',
       entities: [
-        Admin, User, Profile,
+        User, Profile,
         Friends, Wallet,
         Banner, BannerEntry,
         CharacterBase, MintedCharacter
@@ -41,7 +39,6 @@ import { BannerEntry } from './character/entities/banner-entry.entity';
     FriendsModule,
     WalletModule,
     CharacterModule,
-    AdminModule,
   ],
 })
 export class AppModule { }
