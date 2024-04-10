@@ -6,8 +6,8 @@ import { CharacterBase } from "./entities/character-base.entity";
 
 const ConnectionDS = new DataSource({
     type: 'postgres',
-    host: 'rift-rivals-database',
-    //host: 'localhost',
+    //host: 'rift-rivals-database',
+    host: 'localhost',
     port: 5432,
     password: 'riftpassword',
     username: 'riftuser',
