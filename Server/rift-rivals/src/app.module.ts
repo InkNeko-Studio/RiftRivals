@@ -14,6 +14,8 @@ import { CharacterBase } from './character/entities/character-base.entity';
 import { MintedCharacter } from './character/entities/minted-character.entity';
 import { Banner } from './character/entities/banner.entity';
 import { BannerEntry } from './character/entities/banner-entry.entity';
+import { LoginData } from './analytics/entities/login-data.entity';
+import { AnalyticsModule } from './analytics/analytics.module';
 
 @Module({
   imports: [
@@ -27,12 +29,14 @@ import { BannerEntry } from './character/entities/banner-entry.entity';
         User, Profile,
         Friends, Wallet,
         Banner, BannerEntry,
-        CharacterBase, MintedCharacter
+        CharacterBase, MintedCharacter,
+        LoginData
       ],
       database: 'riftdb',
       synchronize: true,
       logging: true,
     }),
+    AnalyticsModule,
     AuthModule,
     UserModule,
     ProfileModule,

@@ -27,6 +27,6 @@ export class User {
     @Column({ type: "date" })
     creationDate: Date;
     
-    @Column({ type: "date" })
+    @Column({ type: "timestamp" })
     lastLogin: Date;
 }

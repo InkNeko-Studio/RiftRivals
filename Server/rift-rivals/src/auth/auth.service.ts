@@ -1,6 +1,8 @@
 import { BadRequestException, HttpException, Injectable } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import { createHash } from "crypto";
+import { AnalyticsService } from "src/analytics/analytics.service";
+import { LoginData } from "src/analytics/entities/login-data.entity";
 import { CreateUserDto } from "src/user/dto/create-user.dto";
 import { User } from "src/user/entities/user.entity";
 import { UserService } from "src/user/user.service";
@@ -8,12 +10,16 @@ import { UserService } from "src/user/user.service";
 @Injectable()
 export class AuthService {
     constructor(
+        private readonly analyticsService: AnalyticsService,
         private readonly userService: UserService,
         private jwtService: JwtService
     ) {}
 
     async login(user: User) {
-        user.lastLogin = new Date();
+        let loginData = new LoginData();
+        loginData.timestamp = new Date();
+        loginData.device = "windows";
+        await this.analyticsService.registerLogin(loginData);
         await this.userService.updateUserLoginDate(user.id);
         const payload = { username: user.username, id: user.id };
         return {

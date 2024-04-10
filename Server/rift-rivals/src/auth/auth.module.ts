@@ -7,9 +7,11 @@ import { JwtModule } from "@nestjs/jwt";
 import { LocalStrategy } from "./strategies/local.strategy";
 import { JwtStrategy } from "./strategies/jwt.strategy";
 import { RefreshStrategy } from "./strategies/refresh.strategy";
+import { AnalyticsModule } from "src/analytics/analytics.module";
 
 @Module({
     imports: [
+        AnalyticsModule,
         UserModule,
         PassportModule,
         JwtModule,
