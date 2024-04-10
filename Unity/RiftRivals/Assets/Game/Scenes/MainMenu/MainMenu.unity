@@ -13118,21 +13118,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1210375443}
     m_Modifications:
-    - target: {fileID: 914825032097327169, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
-      propertyPath: m_text
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1079488717920497330, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
-      propertyPath: m_text
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1566298949224839051, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
-      propertyPath: m_text
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3347248976501108381, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_Name
       value: '[Panel] Wallet'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664705416475374012, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
+      propertyPath: m_Color.a
+      value: 0.72156864
       objectReference: {fileID: 0}
     - target: {fileID: 9152388284541149636, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_Pivot.x
@@ -13160,11 +13152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9152388284541149636, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -447.5682
+      value: -427.5142
       objectReference: {fileID: 0}
     - target: {fileID: 9152388284541149636, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -401.12
+      value: -405.3339
       objectReference: {fileID: 0}
     - target: {fileID: 9152388284541149636, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13196,11 +13188,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9152388284541149636, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -126.2159
+      value: -104.1
       objectReference: {fileID: 0}
     - target: {fileID: 9152388284541149636, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 191.04
+      value: 193.9
       objectReference: {fileID: 0}
     - target: {fileID: 9152388284541149636, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
