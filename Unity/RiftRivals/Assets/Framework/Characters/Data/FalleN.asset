@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab80dbbca1d76f4cb32aa915b05be53, type: 3}
   m_Name: FalleN
   m_EditorClassIdentifier: 
-  cardPicture: {fileID: 21300000, guid: 7f5283e43a01c404189651c1983b63af, type: 3}
+  cardPicture: {fileID: 21300000, guid: 25382a8f2bef82947af44418157692e2, type: 3}

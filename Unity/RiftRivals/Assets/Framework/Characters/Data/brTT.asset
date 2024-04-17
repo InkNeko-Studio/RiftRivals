@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab80dbbca1d76f4cb32aa915b05be53, type: 3}
   m_Name: brTT
   m_EditorClassIdentifier: 
-  cardPicture: {fileID: 21300000, guid: 65854c5775e57e3478d1cb29b6f3b678, type: 3}
+  cardPicture: {fileID: 21300000, guid: 25382a8f2bef82947af44418157692e2, type: 3}

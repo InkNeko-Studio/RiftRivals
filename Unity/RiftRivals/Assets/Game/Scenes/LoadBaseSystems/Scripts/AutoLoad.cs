@@ -21,7 +21,7 @@ namespace Game.Scenes.LoadBaseSystems.Scripts
             AuthManager.Instance.Reauthenticate(() => {
                 Debug.Log("Authenticated");
                 _isAuthenticated = true;
-                skipButton.SetActive(true);
+                if (skipButton != null) skipButton.SetActive(true);
             }, err => {
                 _isAuthenticated = false;
                 skipButton.SetActive(true);
