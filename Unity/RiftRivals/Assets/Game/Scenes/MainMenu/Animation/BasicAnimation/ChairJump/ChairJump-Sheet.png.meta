@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 41343a411ba6da1408a21ecf5deb2408
+guid: 58e6454589cce4a49810e8a726656e41
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,202 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk1-Sheet_0
+      name: ChairJump-Sheet_0
       rect:
         serializedVersion: 2
-        x: 568
-        y: 3847
+        x: 157
+        y: 2477
+        width: 274
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f31716849c2c6a44b9893029b7c8bf0
+      internalID: -1354242291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChairJump-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 2477
+        width: 255
+        height: 455
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f123c7a63c8bc43aba1a769d9b94f8
+      internalID: -160159115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChairJump-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2578
+        y: 2477
+        width: 265
+        height: 446
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1179032ad8e677b43802f349156c8d8f
+      internalID: -1601962970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChairJump-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 3839
+        y: 2538
+        width: 312
+        height: 483
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342ee409549dafd419adbfb4fbd45272
+      internalID: 583644048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChairJump-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1488
+        width: 305
+        height: 464
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4d3112309418b4eb5036a0ce98f337
+      internalID: 301940766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChairJump-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 1629
+        width: 413
+        height: 382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90bca226ba1881d418f668b0cc6336d8
+      internalID: 200899031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChairJump-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2648
+        y: 1688
+        width: 443
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c740626e8a52b6743a7c6aa21b93a28a
+      internalID: -592509958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChairJump-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 3919
+        y: 1699
+        width: 382
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d3b66f2eb91de4fb5c51649bd2a6fa
+      internalID: -407681349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChairJump-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 328
+        width: 296
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50b98fd86580016419c08a87d77c24fd
+      internalID: -722732273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChairJump-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 298
         width: 253
-        height: 476
+        height: 445
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,167 +313,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd900ac53fda7c7439d4098c2e29bf19
-      internalID: -348839615
+      spriteID: 8e925af7643b3ae4c92dce8c394cdf9a
+      internalID: -1677888463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk1-Sheet_1
+      name: ChairJump-Sheet_10
       rect:
         serializedVersion: 2
-        x: 1787
-        y: 3847
-        width: 225
-        height: 476
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7614d4a5d0a2917499417b77c1d5f009
-      internalID: -1052191769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk1-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 2978
-        y: 3847
-        width: 234
-        height: 476
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b19f094e0a6c4a341ad92305c6076526
-      internalID: -402322362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk1-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 4187
-        y: 3847
-        width: 225
-        height: 476
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24bdadc25f134944d994c3a936454b32
-      internalID: 322203525
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk1-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 597
-        y: 2647
-        width: 215
-        height: 476
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92bd1fa917b526a4f9dd57ddf6f364cc
-      internalID: 1669806944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk1-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 1797
-        y: 2647
-        width: 215
-        height: 476
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fbeec0467b8095b4f8ee74e87237319a
-      internalID: -1818223528
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk1-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 2997
-        y: 2647
-        width: 215
-        height: 476
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a88bf44659001c40b611458d7071b2f
-      internalID: 105526104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk1-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 4197
-        y: 2638
-        width: 215
-        height: 485
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a5919c63dd26e6469810db94e27932a
-      internalID: 448336084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk1-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 568
-        y: 1438
+        x: 2838
+        y: 298
         width: 253
-        height: 485
+        height: 433
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,92 +334,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02012338e8d8e92449c683f09651453a
-      internalID: -7439693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk1-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 1768
-        y: 1438
-        width: 244
-        height: 485
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f892eb7cbc997d46bc81f7ed1639c2e
-      internalID: -1598733081
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk1-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 2957
-        y: 1438
-        width: 255
-        height: 485
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11740d1bbcbec8943bab62cd43532339
-      internalID: -1751843587
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk1-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 4157
-        y: 1438
-        width: 255
-        height: 485
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 012e4f470732ddc4397164eaf2eaf562
-      internalID: -987323976
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk1-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 557
-        y: 247
-        width: 255
-        height: 476
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3203f2f756fb434285409af118fe345
-      internalID: 891986582
+      spriteID: 598c2749f07b9854cb177a313be76e56
+      internalID: -1319167423
       vertices: []
       indices: 
       edges: []
@@ -393,19 +351,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Walk1-Sheet_0: -348839615
-      Walk1-Sheet_1: -1052191769
-      Walk1-Sheet_10: -1751843587
-      Walk1-Sheet_11: -987323976
-      Walk1-Sheet_12: 891986582
-      Walk1-Sheet_2: -402322362
-      Walk1-Sheet_3: 322203525
-      Walk1-Sheet_4: 1669806944
-      Walk1-Sheet_5: -1818223528
-      Walk1-Sheet_6: 105526104
-      Walk1-Sheet_7: 448336084
-      Walk1-Sheet_8: -7439693
-      Walk1-Sheet_9: -1598733081
+      ChairJump-Sheet_0: -1354242291
+      ChairJump-Sheet_1: -160159115
+      ChairJump-Sheet_10: -1319167423
+      ChairJump-Sheet_2: -1601962970
+      ChairJump-Sheet_3: 583644048
+      ChairJump-Sheet_4: 301940766
+      ChairJump-Sheet_5: 200899031
+      ChairJump-Sheet_6: -592509958
+      ChairJump-Sheet_7: -407681349
+      ChairJump-Sheet_8: -722732273
+      ChairJump-Sheet_9: -1677888463
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
