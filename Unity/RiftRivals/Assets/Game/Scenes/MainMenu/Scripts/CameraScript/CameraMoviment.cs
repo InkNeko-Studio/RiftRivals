@@ -11,18 +11,9 @@ namespace Game.Scenes.MainMenu.Scripts.CameraScript
         // Start is called before the first frame update
         [SerializeField] private Camera cam;
         private Vector3 dragOrientation;
-
         [SerializeField] private float zoomState, minSize, maxSize;
-
         [SerializeField] private GameObject boundary;
-
-
-
-        void Start()
-        {
-
-        }
-
+        
         // Update is called once per frame
         void Update()
         {
@@ -73,23 +64,21 @@ namespace Game.Scenes.MainMenu.Scripts.CameraScript
 
         private void ClampCameraToBounds()
         {
-            // Calcula os limites da câmera com base no tamanho do boundary
             float cameraHeight = cam.orthographicSize * 2f;
             float cameraWidth = cameraHeight * cam.aspect;
-
-            // Obtém os limites do boundary
+            
             float boundaryLeft = boundary.transform.position.x - boundary.transform.localScale.x / 2f;
             float boundaryRight = boundary.transform.position.x + boundary.transform.localScale.x / 2f;
             float boundaryTop = boundary.transform.position.y + boundary.transform.localScale.y / 2f;
             float boundaryBottom = boundary.transform.position.y - boundary.transform.localScale.y / 2f;
 
-            // Limita a posição da câmera
+           
             float clampedX = Mathf.Clamp(cam.transform.position.x, boundaryLeft + cameraWidth / 2f,
                 boundaryRight - cameraWidth / 2f);
             float clampedY = Mathf.Clamp(cam.transform.position.y, boundaryBottom + cameraHeight / 2f,
                 boundaryTop - cameraHeight / 2f);
 
-            // Define a posição da câmera com os valores limitados
+            
             cam.transform.position = new Vector3(clampedX, clampedY, cam.transform.position.z);
         }
     }
