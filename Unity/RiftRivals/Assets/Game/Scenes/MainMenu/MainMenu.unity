@@ -1831,6 +1831,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 220763383}
   - {fileID: 1445398455}
   - {fileID: 1445360822}
   - {fileID: 1869660747}
@@ -8957,6 +8958,7 @@ GameObject:
   - component: {fileID: 1210375444}
   - component: {fileID: 1210375446}
   - component: {fileID: 1210375447}
+  - component: {fileID: 1210375448}
   m_Layer: 5
   m_Name: '[Panel] Menu'
   m_TagString: Untagged
@@ -8984,7 +8986,6 @@ RectTransform:
   - {fileID: 1374231066}
   - {fileID: 356356307}
   - {fileID: 580753927}
-  - {fileID: 220763383}
   m_Father: {fileID: 192096678}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9064,6 +9065,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1210375448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210375442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559665a37bfaae2448cfdbd0c5789cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1210375447}
+  check: 1
+  pop: {fileID: 1210375446}
+  _celbutton: {fileID: 1445360823}
 --- !u!1 &1216994501
 GameObject:
   m_ObjectHideFlags: 0
@@ -9772,7 +9789,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11607,9 +11624,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1210375446}
-        m_TargetAssemblyTypeName: Game.Shared.UI.Popup.Popup, Assembly-CSharp
-        m_MethodName: Showandhide
+      - m_Target: {fileID: 1210375448}
+        m_TargetAssemblyTypeName: CelphoneScript, Assembly-CSharp
+        m_MethodName: Check
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15739,7 +15756,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1210375443}
+    m_TransformParent: {fileID: 192096678}
     m_Modifications:
     - target: {fileID: 3347248976501108381, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_Name
@@ -15779,7 +15796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9152388284541149636, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 74.72592
+      value: -427.51428
       objectReference: {fileID: 0}
     - target: {fileID: 9152388284541149636, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_SizeDelta.y
@@ -15827,11 +15844,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9152388284541149636, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9152388284541149636, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 150
+      value: 202.67
       objectReference: {fileID: 0}
     - target: {fileID: 9152388284541149636, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
