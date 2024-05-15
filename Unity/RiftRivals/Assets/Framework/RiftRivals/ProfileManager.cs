@@ -8,7 +8,6 @@ namespace Framework.RiftRivals
     {
         public int id;
         public string displayName;
-        public string teamName;
         public int pictureId;
     }
     

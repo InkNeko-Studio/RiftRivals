@@ -25,7 +25,7 @@ namespace Game.Scenes.MainMenu.Scripts.WalletScript
                 Debug.Log(err);
             });
             
-            Invoke(nameof(RefreshWallet), 5);
+            Invoke(nameof(RefreshWallet), 1);
         }
     }
 }

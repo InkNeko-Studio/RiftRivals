@@ -16,7 +16,12 @@ namespace Game.Scenes.MainMenu.Scripts.UserScript
             ProfileManager.Instance.GetProfile(profile => {
                 textDisplayName.text = profile.displayName;
                 textId.text = $"{profile.id:000000}";
-                textTeamName.text = profile.teamName;
+            }, err => {
+                Debug.Log(err);
+            });
+            
+            TeamManager.Instance.GetTeam(team => {
+                textTeamName.text = team.teamName;
             }, err => {
                 Debug.Log(err);
             });

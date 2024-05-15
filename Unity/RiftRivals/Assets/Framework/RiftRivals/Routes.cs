@@ -7,6 +7,7 @@
         public static string AuthRegister = "/auth/register";
         
         public static string Profile = "/profile";
+        public static string Team = "/team";
         public static string UpdateProfile = "/profile/update";
         
         public static string Friends = "/friends";
