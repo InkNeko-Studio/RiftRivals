@@ -34,8 +34,8 @@ namespace Game.Scenes.MainMenu.Scripts.CameraScript
             if (Input.GetMouseButton(0))
             {
                 Vector3 movimentDiference = dragOrientation - cam.ScreenToWorldPoint(Input.mousePosition);
-                print("origem:" + dragOrientation + " new:" + cam.ScreenToWorldPoint(Input.mousePosition) +
-                      " diference: " + movimentDiference);
+                // print("origem:" + dragOrientation + " new:" + cam.ScreenToWorldPoint(Input.mousePosition) +
+                      // " diference: " + movimentDiference);
                 cam.transform.position += movimentDiference;
             }
 
