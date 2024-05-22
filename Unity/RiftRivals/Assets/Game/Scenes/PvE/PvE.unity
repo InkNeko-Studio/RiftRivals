@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyAnim: {fileID: 921320615}
-  wins: 010000
+  wins: 010101
 --- !u!95 &921320615
 Animator:
   serializedVersion: 5
