@@ -20,21 +20,21 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -1.48, y: -4.4535837, z: 0}
-        inSlope: {x: 0, y: -10.689248, z: 0}
-        outSlope: {x: 0, y: -10.689248, z: 0}
+        value: {x: -1.48, y: -5.231, z: 0}
+        inSlope: {x: 0, y: -6.309, z: 0}
+        outSlope: {x: 0, y: -6.309, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.08781362, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1
-        value: {x: -1.48, y: -15.42, z: 0}
-        inSlope: {x: 0, y: -11.531186, z: 0}
-        outSlope: {x: 0, y: -11.531186, z: 0}
+        value: {x: -1.48, y: -11.54, z: 0}
+        inSlope: {x: 0, y: -6.309, z: 0}
+        outSlope: {x: 0, y: -6.309, z: 0}
         tangentMode: 0
         weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.093189955, z: 0.33333334}
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -117,21 +117,21 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -4.4535837
-        inSlope: -10.689248
-        outSlope: -10.689248
-        tangentMode: 0
+        value: -5.231
+        inSlope: -6.309
+        outSlope: -6.309
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.08781362
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: -15.42
-        inSlope: -11.531186
-        outSlope: -11.531186
-        tangentMode: 0
+        value: -11.54
+        inSlope: -6.309
+        outSlope: -6.309
+        tangentMode: 34
         weightedMode: 0
-        inWeight: 0.093189955
+        inWeight: 0.33333334
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
