@@ -6143,7 +6143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f68a64300f4bf91429bf0e4846f01919, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c89c823d0453d3945b4135f138575eaf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7833,9 +7833,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: a5794b24ff7980c4d9bebb1b34aa61eb, type: 3}
-  m_Color: {r: 0.4575472, g: 1, b: 0.49160296, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -12194,7 +12194,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3b9943e6dfa54d347bc05efa3d978ab6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 53c33ce99d6b7424aa5547641695a751, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13895,8 +13895,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 671.65955, y: 181.28}
-  m_SizeDelta: {x: 80.7714, y: 74.358}
+  m_AnchoredPosition: {x: 674.2138, y: 181.28}
+  m_SizeDelta: {x: 75.6628, y: 74.36}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &1723313229
 MonoBehaviour:
@@ -13974,7 +13974,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2770c9bec53cc244e801abccc882b595, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a8b0573ccb29185448cbc18fd76ea48d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14510,6 +14510,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1840601674
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3151868220515464647, guid: 1435069b0bfb73d46a5af3145b58cb24, type: 3}
+      propertyPath: m_Name
+      value: Lead
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734640162428701906, guid: 1435069b0bfb73d46a5af3145b58cb24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.18504274
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734640162428701906, guid: 1435069b0bfb73d46a5af3145b58cb24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.099221945
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734640162428701906, guid: 1435069b0bfb73d46a5af3145b58cb24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734640162428701906, guid: 1435069b0bfb73d46a5af3145b58cb24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734640162428701906, guid: 1435069b0bfb73d46a5af3145b58cb24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734640162428701906, guid: 1435069b0bfb73d46a5af3145b58cb24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734640162428701906, guid: 1435069b0bfb73d46a5af3145b58cb24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734640162428701906, guid: 1435069b0bfb73d46a5af3145b58cb24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734640162428701906, guid: 1435069b0bfb73d46a5af3145b58cb24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734640162428701906, guid: 1435069b0bfb73d46a5af3145b58cb24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1435069b0bfb73d46a5af3145b58cb24, type: 3}
 --- !u!1 &1869660746
 GameObject:
   m_ObjectHideFlags: 0
@@ -14624,7 +14681,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 90213e4f9589660458da4a383f9fcb21, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1ddbf741394dd5c47b0da5b689b10964, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16298,6 +16355,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 192096678}
     m_Modifications:
+    - target: {fileID: 66709724664814984, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d4614a05452f2dc43b1d2432410d3499, type: 3}
     - target: {fileID: 3347248976501108381, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_Name
       value: '[Panel] Wallet'
@@ -16310,6 +16371,14 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.72156864
       objectReference: {fileID: 0}
+    - target: {fileID: 7407780033211574501, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 034f1dabf324341489af0960f5ec0e83, type: 3}
+    - target: {fileID: 8766303660885600195, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 636036c3b327cb8458588bd3af56a16c, type: 3}
     - target: {fileID: 9152388284541149636, guid: c1e8baedc01db954fbbbb7dbf63d6dfa, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -16418,8 +16487,9 @@ SceneRoots:
   - {fileID: 1570784553}
   - {fileID: 1407939325}
   - {fileID: 1829468551}
-  - {fileID: 971654763}
   - {fileID: 2103736527}
   - {fileID: 1826874464}
   - {fileID: 2011021827}
   - {fileID: 1301103374}
+  - {fileID: 1840601674}
+  - {fileID: 971654763}
