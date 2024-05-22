@@ -35,9 +35,9 @@ namespace Game.Scenes.MainMenu.Scripts.BattleScript
             
             _time += Time.deltaTime;
 
-            int minutes = Mathf.RoundToInt(_time / 60f);
-            int seconds =  Mathf.RoundToInt(_time - minutes * 60);
-            int hours = Mathf.RoundToInt(minutes / 60f);
+            int minutes = Mathf.FloorToInt(_time / 60f);
+            int seconds =  Mathf.FloorToInt(_time - minutes * 60);
+            int hours = Mathf.FloorToInt(minutes / 60f);
             minutes -= hours * 60;
 
             timerText.text = $"{hours.ToString("00")}:{minutes.ToString("00")}:{seconds.ToString("00")}";

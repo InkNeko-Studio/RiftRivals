@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6335d03c91e42bea41c36aa9e410d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: ws://34.123.95.21:3002
+  url: ws://localhost:3002
 --- !u!4 &289309050
 Transform:
   m_ObjectHideFlags: 0

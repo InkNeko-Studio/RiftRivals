@@ -19,8 +19,8 @@ namespace Game.Scenes.MainMenu.Scripts.BattleScript
                 Debug.Log($"Match Found: {opponent}");
             }, (queue) => {
                 Debug.Log($"Queue: {queue}");
-            }, () => {
-                Debug.Log("Queue Error");
+            }, (err) => {
+                Debug.Log($"Queue Error: {err}");
             });
         }
     }

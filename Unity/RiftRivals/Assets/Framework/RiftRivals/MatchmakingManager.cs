@@ -42,10 +42,10 @@ namespace Framework.RiftRivals
             _webSocketManager.Connect(url, () => {});
         }
 
-        public void EnterQueue(Action<int> onMatchFound, Action<int> onQueueUpdate, Action onError)
+        public void EnterQueue(Action<int> onMatchFound, Action<int> onQueueUpdate, Action<string> onError)
         {
             _webSocketManager.On("error", (res) => {
-                onError();
+                onError(res);
             });
             _webSocketManager.On<QueueUpdateResponse>("on-queue", (res) => {
                 onQueueUpdate(res.queue);
@@ -58,6 +58,7 @@ namespace Framework.RiftRivals
                 token = ConnectionManager.Instance.accessToken
             };
             _webSocketManager.Send("enter", authTokenDto);
+            Debug.Log("Matchmaking sent");
         }
     }
 }
