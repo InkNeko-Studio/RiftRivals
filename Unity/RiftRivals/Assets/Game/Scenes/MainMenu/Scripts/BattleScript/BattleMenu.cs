@@ -16,11 +16,21 @@ namespace Game.Scenes.MainMenu.Scripts.BattleScript
             queuePopup.Show();
             queueTimer.StartTimer();
             MatchmakingManager.Instance.EnterQueue((opponent) => {
+                queueTimer.CancelQueue();
                 Debug.Log($"Match Found: {opponent}");
             }, (queue) => {
                 Debug.Log($"Queue: {queue}");
             }, (err) => {
                 Debug.Log($"Queue Error: {err}");
+            });
+        }
+
+        public void EnterPvE()
+        {
+            ChampionshipManager.Instance.JoinChampionship((res) => {
+                Debug.Log(JsonUtility.ToJson(res));
+            }, err => {
+                Debug.Log(err);
             });
         }
     }

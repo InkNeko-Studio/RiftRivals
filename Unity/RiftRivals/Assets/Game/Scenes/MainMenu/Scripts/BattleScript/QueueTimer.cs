@@ -1,3 +1,4 @@
+using Framework.RiftRivals;
 using Game.Shared.UI.Popup;
 using TMPro;
 using UnityEngine;
@@ -25,6 +26,7 @@ namespace Game.Scenes.MainMenu.Scripts.BattleScript
         public void CancelQueue()
         {
             _running = false;
+            MatchmakingManager.Instance.ExitQueue();
             popup.Hide();
             SetConcurrentButtons(true);
         }

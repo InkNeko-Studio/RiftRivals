@@ -58,7 +58,11 @@ namespace Framework.RiftRivals
                 token = ConnectionManager.Instance.accessToken
             };
             _webSocketManager.Send("enter", authTokenDto);
-            Debug.Log("Matchmaking sent");
+        }
+
+        public void ExitQueue()
+        {
+            _webSocketManager.Reconnect();
         }
     }
 }

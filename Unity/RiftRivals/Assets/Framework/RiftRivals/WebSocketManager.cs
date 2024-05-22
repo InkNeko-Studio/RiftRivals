@@ -8,6 +8,7 @@ namespace Framework.RiftRivals
     public class WebSocketManager
     {
         private SocketIOUnity _socket;
+        private string _url;
 
         ~WebSocketManager()
         {
@@ -16,12 +17,19 @@ namespace Framework.RiftRivals
 
         public async void Connect(string url, Action callback = null)
         {
+            _url = url;
             var uri = new Uri(url);
             _socket = new SocketIOUnity(uri, new SocketIOOptions {
                 Transport = SocketIOClient.Transport.TransportProtocol.WebSocket
             });
             await _socket.ConnectAsync();
             if (callback != null) callback();
+        }
+        
+        public void Reconnect()
+        {
+            Close();
+            Connect(_url);
         }
 
         public void Close()

@@ -21,5 +21,7 @@
         
         public static string Wallet = "/wallet";
         
+        public static string ChampionshipJoin = "/championship/join";
+        
     }
 }
