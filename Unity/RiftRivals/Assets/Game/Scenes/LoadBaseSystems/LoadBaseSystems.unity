@@ -868,7 +868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd5fd8f7454d0648a0df741e557c735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: http://34.123.95.21:3000
+  url: http://26.221.188.201:3000
   accessToken: 
   refreshToken: 
 --- !u!1 &886472470
@@ -1166,7 +1166,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e7154381264ff5a4a9d2c92e124cb047, type: 2}
   - {fileID: 11400000, guid: 7a83053ccaf8b5e4f8cfd1ade9fcc11e, type: 2}
   - {fileID: 11400000, guid: 4603579717349c845af1289a073cf558, type: 2}
-  - {fileID: 11400000, guid: c9bdf8e564460e043a9551200d8ec799, type: 2}
 --- !u!4 &922492681
 Transform:
   m_ObjectHideFlags: 0
