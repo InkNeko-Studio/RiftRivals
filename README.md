@@ -59,19 +59,6 @@
   <li>Abra a cena principal em <code>Assets/_Project/Scenes/Main.unity</code> e aperte <kbd>Play</kbd>.</li>
 </ol>
 
-<h2 id="como-jogar">🎮 Como jogar</h2>
-<ul>
-  <li><strong>Objetivo:</strong> vencer a partida capturando objetivos ou eliminando a equipe rival.</li>
-  <li><strong>Controles padrão (PC):</strong>
-    <ul>
-      <li><kbd>WASD</kbd> / <kbd>Mouse</kbd>: movimentação/visão</li>
-      <li><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd>: habilidades</li>
-      <li><kbd>Espaço</kbd>: ação contextual / esquiva</li>
-      <li><kbd>Esc</kbd>: menu</li>
-    </ul>
-  </li>
-  <li><strong>Rift Events:</strong> a cada X minutos, a arena ativa um evento que altera regras/terreno temporariamente.</li>
-</ul>
 
 <h2 id="desenvolvimento">🛠️ Desenvolvimento</h2>
 <h3>Estrutura sugerida</h3>
